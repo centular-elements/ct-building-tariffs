@@ -1,0 +1,91 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<!--
+`ct-building-tariffs`
+Element for display of building tariffs
+
+@demo demo/index.html 
+-->
+
+<dom-module id="ct-building-tariffs">
+  <template>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style is="custom-style">
+      :host {
+        display: block;
+      }
+    </style>
+
+    <div class="main-section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-xs-12">
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered table-hover table-middle">
+                <thead>
+                  <th>From Units</th>
+                  <th>To Units</th>
+                  <th>Base Tariff (incl. VAT)</th>
+                  <th>Fees</th>
+                  <th>Consumer Tariff</th>
+                  <th>Client Rebate</th>
+                </thead>
+                <tbody>
+                <template is="dom-repeat" items="[[tariffs]]">
+                  <tr>
+                    <td><paper-input id="fromUnitsInput"
+                                     value="[[item.fromUnits]]"
+                                     readonly
+                    ></paper-input></td>
+                    <td><paper-input id="toUnitsInput"
+                                     placeholder="∞"
+                                     value="[[item.toUnits]]"
+                                     readonly
+                    ></paper-input></td>
+                    <td><paper-input id="baseTariffPlusVatInput"
+                                     value="[[item.baseTariffPlusVat]]"
+                                     readonly
+                    ></paper-input></td>
+                    <td>
+                      <template is="dom-repeat" items="[[item.fees]]" as="fee">
+                        <span>[[fee.name]] @ [[fee.percentage]]% = [[fee.inclVat]] (incl. VAT)</span>
+                      </template>
+                    </td>
+                    <td>
+                      <paper-input id="consumerTariffInput"
+                                   value="[[item.consumerTariff]]"
+                                   readonly
+                      ></paper-input></td>
+                    <td>
+                      <paper-input id="clientRebateInput"
+                                   value="[[item.clientRebate]]"
+                                   readonly
+                      ></paper-input></td>
+                  </tr>
+                </template>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'ct-building-tariffs',
+
+      properties: {
+        tariffs: {
+          type: Array,
+          value: function () {
+            return [];
+          }
+        }
+      },
+
+    });
+  </script>
+</dom-module>

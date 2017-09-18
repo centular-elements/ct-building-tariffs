@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>ct-building-tariffs demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../ct-building-tariffs.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </head>
+  <body>
+  <!--<div class="vertical-section-container centered">
+    <h3>Basic ct-building-tariffs demo</h3>
+    <demo-snippet>
+      <template>-->
+          <ct-building-tariffs tariffs='[
+        {
+            "vat": 14,
+            "clientRebate": 1.03,
+            "baseTariff": 1,
+            "utilityType": {
+                "id": 0,
+                "name": "Electricity"
+            },
+            "fees": [
+                {
+                    "percentage": 8.75,
+                    "vat": 0.01,
+                    "name": "Citiq",
+                    "amount": 0.1,
+                    "inclVat": 0.11
+                }
+            ],
+            "baseTariffPlusVat": 1.14,
+            "toUnits": 350,
+            "fromUnits": 0,
+            "consumerTariff": 1.14,
+            "baseTariffVat": 0.14
+        },
+        {
+            "vat": 14,
+            "clientRebate": 2.05,
+            "baseTariff": 2,
+            "utilityType": {
+                "id": 0,
+                "name": "Electricity"
+            },
+            "fees": [
+                {
+                    "percentage": 8.75,
+                    "vat": 0.03,
+                    "name": "Citiq",
+                    "amount": 0.2,
+                    "inclVat": 0.23
+                }
+            ],
+            "baseTariffPlusVat": 2.28,
+            "toUnits": 700,
+            "fromUnits": 350.001,
+            "consumerTariff": 2.28,
+            "baseTariffVat": 0.28
+        },
+        {
+            "vat": 14,
+            "clientRebate": 3.08,
+            "baseTariff": 3,
+            "utilityType": {
+                "id": 0,
+                "name": "Electricity"
+            },
+            "fees": [
+                {
+                    "percentage": 8.75,
+                    "vat": 0.04,
+                    "name": "Citiq",
+                    "amount": 0.3,
+                    "inclVat": 0.34
+                }
+            ],
+            "baseTariffPlusVat": 3.42,
+            "fromUnits": 700.001,
+            "consumerTariff": 3.42,
+            "baseTariffVat": 0.42
+        }
+    ]'></ct-building-tariffs>
+        <!--</template>
+      </demo-snippet>
+    </div>-->
+  </body>
+</html>
